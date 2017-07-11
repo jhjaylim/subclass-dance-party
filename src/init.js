@@ -28,5 +28,44 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    dancer.$node.mouseover(function(event) {
+
+      var myParse = parseInt(dancer.$node.css('border'));
+      dancer.$node.css('border-width', (myParse+20).toString()+"px" );
+      dancer.$node.css('border-radius', (myParse+20).toString()+"px" );
+
+
+
+    });
+
+    dancer.$node.mouseleave(function(event) {
+
+      var myParse = parseInt(dancer.$node.css('border'));
+      dancer.$node.css('border-width', (myParse-20).toString()+"px" );
+      dancer.$node.css('border-radius', (myParse-20).toString()+"px" );
+
+
+
+    });
+
+
+    window.dancers.push(dancer);
   });
+
+
+  $('.lineUp').on('click', function(event) {
+    var distBtwnDancers = $("body").width() / window.dancers.length;
+    var startPosition = 0;
+    window.dancers.forEach(function (dancer) {
+      startPosition += distBtwnDancers;
+      debugger;
+      dancer.lineUp($("body").height() / 2, startPosition );
+    });
+  });
+
+
+
+
+
+
 });
