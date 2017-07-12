@@ -1,5 +1,5 @@
 var makeCrazyCarrey = function(top, left, timeBetweenSteps) {
-  debugger;
+
   makeDancer.call(this, top, left, timeBetweenSteps);
 
   this.$node = $('<span class = "crazyCarrey"><img class = "crazyCarrey" src = "crazy carrey.gif" ></span>');
