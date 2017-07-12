@@ -90,21 +90,17 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
     dancer.$node.mouseover(function(event) {
+      debugger;
 
-      var myParse = parseInt(dancer.$node.css('border'));
-      dancer.$node.css('border-width', (myParse+20).toString()+"px" );
-      dancer.$node.css('border-radius', (myParse+20).toString()+"px" );
 
+      $(dancer.$node[0].firstChild).css('width', "+=100" );
 
 
     });
 
     dancer.$node.mouseleave(function(event) {
 
-      var myParse = parseInt(dancer.$node.css('border'));
-      dancer.$node.css('border-width', (myParse-20).toString()+"px" );
-      dancer.$node.css('border-radius', (myParse-20).toString()+"px" );
-
+      $(dancer.$node[0].firstChild).css('width', "-=100" );
 
 
     });
