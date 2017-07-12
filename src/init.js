@@ -34,8 +34,6 @@ $(document).ready(function() {
       dancer.$node.css('border-width', (myParse+20).toString()+"px" );
       dancer.$node.css('border-radius', (myParse+20).toString()+"px" );
 
-
-
     });
 
     dancer.$node.mouseleave(function(event) {
@@ -44,14 +42,10 @@ $(document).ready(function() {
       dancer.$node.css('border-width', (myParse-20).toString()+"px" );
       dancer.$node.css('border-radius', (myParse-20).toString()+"px" );
 
-
-
     });
-
 
     window.dancers.push(dancer);
   });
-
 
   $('.lineUp').on('click', function(event) {
     var distBtwnDancers = $("body").width() / window.dancers.length;
@@ -65,9 +59,7 @@ $(document).ready(function() {
   $('.addCrazyCarrey').on('click', function(event) {
 
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-
     var dancerMakerFunction = window[dancerMakerFunctionName];
-
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
@@ -75,30 +67,21 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
     dancer.$node.mouseover(function(event) {
-
-
-
       $(dancer.$node[0].firstChild).css('width', "+=100" );
-
-
     });
 
     dancer.$node.mouseleave(function(event) {
-
       $(dancer.$node[0].firstChild).css('width', "-=100" );
-
-
     });
 
-
     window.dancers.push(dancer);
+
   });
 
 
   $('.addDancingSpiderMan').on('click', function(event) {
 
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     var dancer = new dancerMakerFunction(
@@ -107,28 +90,17 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+
     dancer.$node.mouseover(function(event) {
-
-
-
       $(dancer.$node[0].firstChild).css('width', "+=100" );
-
-
     });
 
     dancer.$node.mouseleave(function(event) {
-
       $(dancer.$node[0].firstChild).css('width', "-=100" );
-
-
     });
 
-
     window.dancers.push(dancer);
+
   });
-
-
-
-
 
 });

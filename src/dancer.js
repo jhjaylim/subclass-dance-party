@@ -7,9 +7,6 @@ var makeDancer = function(top, left, timeBetweenSteps) {
     top: top,
     left: left
   };
-  // this.$node.on('click', function(){
-  //   alert('hi');
-  // });
 
   this.timeBetweenSteps = timeBetweenSteps;
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
@@ -27,8 +24,6 @@ makeDancer.prototype.step = function() {
   // make Dancer
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
-  // var that = this;
-  // setTimeout(function(){ that.step(); }, this.timeBetweenSteps);
 
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
